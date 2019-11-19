@@ -1,0 +1,22 @@
+﻿@using WebsiteFlower.Models;
+@if (Session["TaiKhoan"] != null)
+{
+    using (Html.BeginForm("DangXuat", "NguoiDung", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                @Html.ActionLink("Hello " + Session["TenDn"] + "!", "TrangChu", "BFlower")
+            </li>
+            <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+        </ul>
+    }
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("Đăng ký", "DangKy", "NguoiDung")</li>
+        <li>@Html.ActionLink("Đăng nhập", "DangNhap", "NguoiDung")</li>
+    </ul>
+}

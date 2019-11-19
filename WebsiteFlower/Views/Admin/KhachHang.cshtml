@@ -1,0 +1,68 @@
+﻿@using WebsiteFlower.Models;
+@using PagedList.Mvc;
+@model PagedList.PagedList<WebsiteFlower.Models.KHACHHANG>
+
+@{
+    ViewBag.Title = "KhachHang";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align:center">Quản lý danh sách khách hàng</h2>
+
+<p style="text-align:center">
+    @Html.ActionLink("Thêm mới một khách hàng", "ThemMoiKH")
+</p>
+<table class="table" border="1" style="color:black; font-weight:bold">
+    <tr>
+        <th style="width:200px"> Họ tên</th>
+        <th style="width:200px"> Tài khoản</th>
+        <th style="width:200px"> Mật khẩu</th>
+        <th style="width:200px"> Email</th>
+        <th style="width:200px"> Địa chỉ</th>
+        <th style="width:200px"> Điện thoại</th>
+        <th style="width:200px"> Ngày sinh</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HOTEN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TAIKHOAN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MATKHAU)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EMAIL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DIACHIKH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DIENTHOAIKH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NGAYSINH)
+            </td>
+            <td>
+                @Html.ActionLink("Chỉnh sửa", "EditKH", new { id = item.MAKH }) |
+                @Html.ActionLink("Chi tiết", "DetailsKH", new { id = item.MAKH }) |
+                @Html.ActionLink("Xóa", "DeleteKH", new { id = item.MAKH })
+            </td>
+        </tr>
+    }
+</table>
+<div style="color: black">
+    Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount;
+</div>
+<div class="MenuTrang">
+    @Html.PagedListPager(Model, page => Url.Action("KhachHang", new { page = page }))
+</div>
+<style>
+    .MenuTrang li {
+        display: inline;
+    }
+</style>

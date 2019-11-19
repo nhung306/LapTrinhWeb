@@ -1,0 +1,113 @@
+﻿
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2 style="text-align: center; font-family: -webkit-pictograph; font-size: 50px; color: #ff006e">Liên hệ</h2>
+<div id="contact">
+    <div class="wrapper">
+        <p>[B.Flower Delivery]: Gửi điện hoa trực tiếp đến người nhận trên toàn quốc.</p>
+        <b>Hoa là biểu tượng cho cái đẹp, mỗi bông hoa mang một ý nghĩa khác nhau. Vẻ đẹp của hoa luôn mê đắm lòng người. </b>
+        <b>Hoa đã trở thành một biểu tượng có thể sử dụng làm ẩn dụ nói lên nét đẹp, tính cách con người. Vậy nên, B.Flower cam kết đem đến cho bạn dịch vụ điện hoa tốt nhất hiện nay.</b>
+        <p>Cam kết: Nhanh nhất, giá tốt nhất, chất lượng nhất.</p>
+        <b>
+            Với sự liên tục cải tiến quy trình, B.Flower nỗ lực đáp ứng trong vòng 2 giờ sẽ giao hoa cho người nhận, chúng tôi là một số ít công ty phục vụ dịch vụ điện hoa cho cả những mẫu hoa có giá từ 100.000đ (5$) mà không có phụ phí gì thêm.
+            Ngoài ra, các mẫu hoa của chúng tôi có xác nhận bảo hành tươi tối thiểu 3 ngày trong điều kiện bình thường.
+        </b>
+        <p>Trở thành công ty điện hoa số 1 tại Việt Nam</p>
+        <b>
+            Với sự đầu tư nghiêm túc, chúng tôi tập trung nâng cao trải nghiệm người dùng (Customer Experience) kể cả trên môi trường
+            trực tuyến và ngoại tuyến để đem lại một dịch vụ hoàn hảo xứng đáng trong nỗ lực trở thành công ty điện hoa số 1 tại Việt Nam.
+        </b>
+    </div>
+    <section class="Material-contact-section section-padding section-dark">
+        <div class="container">
+            <div class="row">
+                <!-- Section Titile -->
+                <div class="col-md-12 wow animated fadeInLeft" data-wow-delay=".2s">
+                    <h3 style="text-align:center" class="section-title">Rất vui lòng khi nghe những suy nghĩ, cảm nhận từ khách hàng của B.Flower</h3>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Section Titile -->
+                <div class="col-md-6 mt-3 contact-widget-section2 wow animated fadeInLeft" data-wow-delay=".2s">
+                    <h5 style="text-align:center">[B.Flower Delivery]: Gửi điện hoa trực tiếp đến người nhận trên toàn quốc.</h5>
+                    <div class="find-widget">
+                        Điện thoại: (+84) 0972-470-802
+                    </div>
+                    <div class="find-widget">
+                        Địa chỉ: <a href="#">572 Điện Biên Phủ, phường 25, quận Bình Thạnh, TP.HCM</a>
+                    </div>
+                    <div class="find-widget">
+                        Email: <a>b.flower@gmail.com</a>
+                    </div>
+                    <div class="find-widget">
+                        Website:  <a href="#">bflowerMvc.somee.com</a>
+                    </div>
+                    <div class="find-widget">
+                        Giờ mở cửa: T2-T6: 8:00 AM - 9:00 PM;
+                        T7-CN: 10:00 AM - 8:00 PM
+                    </div>
+                    <div>
+                        <p>Bản đồ</p>
+                        <div class="mapouter">
+                            <div class="gmap_canvas"><iframe width="400" height="200" id="gmap_canvas" src="https://maps.google.com/maps?q=572%20%C4%90i%E1%BB%87n%20Bi%C3%AAn%20Ph%E1%BB%A7%2C%20ph%C6%B0%E1%BB%9Dng%2025%2C%20qu%E1%BA%ADn%20b%C3%ACnh%20th%E1%BA%A1nh&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>Werbung: <a href="https://www.pureblack.de">Pure Black GmbH</a></div>
+                            <style>
+                                .mapouter {
+                                    position: relative;
+                                    text-align: right;
+                                    height: 200px;
+                                    width: 400px;
+                                }
+
+                                .gmap_canvas {
+                                    overflow: hidden;
+                                    background: none !important;
+                                    height: 200px;
+                                    width: 400px;
+                                    border: 1px solid;
+                                }
+                            </style>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- contact form -->
+                <div class="col-md-4 wow animated fadeInRight" data-wow-delay=".2s">
+                    <form class="shake" role="form" method="post" id="contactForm" name="contact-form" data-toggle="validator">
+                        <!-- Name -->
+                        <div class="form-group label-floating">
+                            <label class="control-label" for="name">Họ tên</label>
+                            <input class="form-control" id="name" type="text" name="name" required data-error="Nhập tên của bạn">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <!-- email -->
+                        <div class="form-group label-floating">
+                            <label class="control-label" for="email">Email</label>
+                            <input class="form-control" id="email" type="email" name="email" required data-error="Email">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <!-- Subject -->
+                        <div class="form-group label-floating">
+                            <label class="control-label">Bình luận</label>
+                            <input class="form-control" for="message" rows="5" id="msg_subject" type="text" name="subject" required data-error="Nội dung">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group label-floating">
+                            <label for="message" class="control-label">Thắc mắc</label>
+                            <textarea class="form-control" rows="3" id="message" name="message" required data-error="Viết nội dung"></textarea>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <!-- Form Submit -->
+                        <div class="form-submit mt-5">
+                            <button class="btn btn-common" type="submit" id="form-submit"><i class="material-icons mdi mdi-message-outline"></i>Gửi</button>
+                            <div id="msgSubmit" class="h3 text-center hidden"></div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</div>

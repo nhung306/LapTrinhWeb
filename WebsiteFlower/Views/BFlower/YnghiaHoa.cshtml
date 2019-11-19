@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "YnghiaHoa";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="text-align: center; font-family: -webkit-pictograph; font-size: 50px; color: #ff006e">Ý nghĩa các loại hoa</h2>
+<div style="background-image: url('../Images/brg.jpg'); font-size: 20px" class="container">
+    <div class="row">
+        @foreach (var hoa in Model)
+        {
+            <div class="col-xs-6 col-md-2">
+                <p>@hoa.TENHOA  </p>
+            </div>
+            <div class="col-xs-6 col-md-10">
+                <p>@hoa.MEAN1</p>
+            </div>
+        }
+    </div>
+</div>
+
+

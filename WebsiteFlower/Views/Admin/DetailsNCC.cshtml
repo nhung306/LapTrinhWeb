@@ -1,0 +1,42 @@
+﻿@model WebsiteFlower.Models.NCC
+
+@{
+    ViewBag.Title = "DetailsNCC";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align:center">Thông tin chi tiết nhà cung cấp</h2>
+
+<div class="container" style="color: black; font-weight: bold">
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+           Tên nhà cung cấp:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TENNCC)
+        </dd>
+
+        <dt>
+            Điện thoại:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DIENTHOAI)
+        </dd>
+
+        <dt>
+            Địa chỉ:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DIACHI)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Chỉnh sửa", "EditNCC", new { id = Model.MANCC }) |
+    @Html.ActionLink("Trở về", "NhaCC")
+</p>

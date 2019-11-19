@@ -1,0 +1,9 @@
+﻿
+<div class="dropdown-content">
+    @foreach (var item in Model)
+    {
+        <a href="@Url.Action("Hoa", "BFlower",new { id = item.MAHOA})">
+            @item.TENHOA
+        </a>
+    }
+</div>

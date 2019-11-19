@@ -1,0 +1,53 @@
+﻿@using WebsiteFlower.Models;
+@using PagedList.Mvc;
+@model PagedList.PagedList<WebsiteFlower.Models.NCC>
+
+@{
+    ViewBag.Title = "NSX";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<h2 style="text-align:center">Quản lý danh sách nhà cung cấp</h2>
+
+<p style="text-align:center">
+    @Html.ActionLink("Thêm mới nhà cung cấp", "ThemMoiNCC")
+</p>
+<table class="table" border="1" style="color:black; font-weight:bold">
+    <tr>
+        <th style="width:200px"> Tên nhà cung cấp</th>
+        <th style="width:200px"> Địên thoại</th>
+        <th style="width:200px"> Địa chỉ</th>       
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TENNCC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DIENTHOAI)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DIACHI)
+            </td>
+            <td>
+                @Html.ActionLink("Chỉnh sửa", "EditNCC", new { id = item.MANCC }) |
+                @Html.ActionLink("Chi tiết", "DetailsNCC", new { id = item.MANCC }) |
+                @Html.ActionLink("Xóa", "DeleteNCC", new { id = item.MANCC })
+            </td>
+        </tr>
+    }
+</table>
+<div style="color: black">
+    Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount;
+</div>
+<div class="MenuTrang">
+    @Html.PagedListPager(Model, page => Url.Action("NhaCC", new { page = page }))
+</div>
+<style>
+    .MenuTrang li {
+        display: inline;
+    }
+</style>

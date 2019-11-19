@@ -1,0 +1,44 @@
+﻿@using WebsiteFlower.Models;
+@using PagedList.Mvc;
+@model PagedList.PagedList<SANPHAM>
+
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2 style="text-align:center; text-transform:uppercase " >Hoa nổi bật</h2>
+<div class="row">
+    @foreach (var hoa in Model)
+    {
+        <div class="col-md-4">
+            <div class="card">
+                <h5 class="card-header">@hoa.TENSP</h5>
+                <div class="card-body">
+                    <a>
+                        <img alt="@hoa.TENSP" src="~/Images/@hoa.ANH" width=300px height=250px />
+                    </a>
+                </div>
+                <div class="card-footer text-muted">
+                    <p class="col-md-6">Giá bán: @string.Format("{0:0,0}", hoa.GIABAN) đ</p>
+                    <a style="text-align:right" href="@Url.Action("ThemGioHang","GioHang",
+                            new { @iMASP = hoa.MASP, @strURL= Request.Url.ToString() } )" class="btn btn-primary">
+                        Đặt mua
+                    </a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<div style="color: black">
+    Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount;
+</div>
+<div class="MenuTrang">
+    @Html.PagedListPager(Model, page => Url.Action("TrangChu", new { page = page }))
+</div>
+<style>
+    .MenuTrang li {
+        display: inline;
+    }
+</style>

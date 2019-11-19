@@ -1,0 +1,91 @@
+﻿@model WebsiteFlower.Models.SANPHAM
+
+@{
+    ViewBag.Title = "ChiTiet";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align:center">Thông tin chi tiết sản phẩm</h2>
+
+<div class="container" style="color: black; font-weight: bold">
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Mã hoa:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAHOA)
+        </dd>
+
+        <dt>
+            Mã kiểu:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAKIEU)
+        </dd>
+
+        <dt>
+            Mã loại:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MALOAI)
+        </dd>
+
+        <dt>
+            Tên hoa:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TENSP)
+        </dd>
+
+        <dt>
+            Giá bán:
+        </dt>
+
+        <dd>
+            @String.Format("{0:0,0}", Model.GIABAN)
+        </dd>
+
+        <dt>
+            Ảnh:
+        </dt>
+
+        <dd>
+            <img src="@Url.Content("~/Images/"+Model.ANH)" width="120px" />
+        </dd>
+
+        <dt>
+            Ngày nhập:
+        </dt>
+
+        <dd>
+            @String.Format("{0:dd/MM/yyyy}", Model.NGAYNHAP)
+        </dd>
+
+        <dt>
+            Số lượng tồn:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SLTON)
+        </dd>
+
+        <dt>
+            Mã nhà cung cấp:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MANCC)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Chỉnh sửa", "Sua", new { id = Model.MASP }) |
+    @Html.ActionLink("Trở về", "Hoa")
+</p>
